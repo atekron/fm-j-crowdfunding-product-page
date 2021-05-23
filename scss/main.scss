@@ -1,6 +1,7 @@
 //abstracts
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
+@import "./abstracts/typography";
 
 //base
 @import "./base/resets";
@@ -10,3 +11,15 @@
 @import "./components/success-modal";
 @import "./components/selection-modal";
 
+//layout
+@import "./layout/container";
+@import "./layout/main-nav";
+@import "./layout/content";
+@import "./layout/header";
+
+body {
+  font-family: "Commissioner", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: $almost-white;
+}

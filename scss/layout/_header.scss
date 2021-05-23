@@ -1,0 +1,70 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 2rem auto;
+  margin-top: -10rem;
+  max-width: 85%;
+  padding: 2rem;
+  text-align: center;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+
+  &__title {
+    margin: 0 4rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      width: 5rem;
+      height: 5rem;
+      background-image: url("/images/logo-mastercraft.svg");
+      background-size: 5rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -2.5rem;
+    }
+  }
+
+  &__text {
+    color: $dark-grey;
+    padding: 2rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    button {
+      background-color: $moderate-cyan;
+      color: white;
+      border: none;
+      border-radius: 3rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  &__back-project {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  &__bookmark {
+    margin-left: 0.5rem;
+    opacity: 0.5;
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

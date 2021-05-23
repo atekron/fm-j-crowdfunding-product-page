@@ -1,0 +1,37 @@
+.main-nav {
+  min-height: 30rem;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+
+  img {
+    height: 1.8rem;
+    width: auto;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: $small) {
+    background-image: url("/images/image-hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  &__links {
+    @media screen and (max-width: $small) {
+      display: none;
+    }
+  }
+
+  &__hamburger-close {
+    display: none;
+  }
+
+  &__hamburger {
+    display: none;
+    @media screen and (max-width: $small) {
+      display: inline-block;
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+}
