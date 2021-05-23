@@ -1,0 +1,34 @@
+.info {
+  @include card;
+  max-width: 85%;
+  text-align: center;
+  &__entries {
+    div:first-of-type h3::before {
+      content: "$";
+    }
+  }
+
+  &__parameter {
+    font-size: 2.5rem;
+  }
+
+  &__description {
+    @include text;
+    padding-top: 0.5rem;
+  }
+
+  &__progress {
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 1rem;
+  }
+
+  &__progress-value {
+    display: block;
+    background-color: $moderate-cyan;
+    border-radius: 0.5rem;
+    // width: 100px;
+    height: 100%;
+  }
+}

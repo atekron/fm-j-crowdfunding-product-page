@@ -1,0 +1,24 @@
+@mixin card {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+}
+
+@mixin text {
+  color: $dark-grey;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+@mixin btn {
+  background-color: $moderate-cyan;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}

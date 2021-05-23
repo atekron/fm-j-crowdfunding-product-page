@@ -6,6 +6,11 @@
           box-sizing: border-box;
 }
 
+.disabled-element {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .success-modal {
   display: none;
 }
@@ -64,11 +69,12 @@
   }
 }
 
-.content {
-  border: 1px solid black;
-}
-
 .header {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,14 +83,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
-  margin: 2rem auto;
   margin-top: -10rem;
   max-width: 85%;
-  padding: 2rem;
   text-align: center;
-  border: 0.15rem solid whitesmoke;
-  border-radius: 0.5rem;
 }
 
 .header__title {
@@ -149,6 +150,129 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.info {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+  max-width: 85%;
+  text-align: center;
+}
+
+.info__entries div:first-of-type h3::before {
+  content: "$";
+}
+
+.info__parameter {
+  font-size: 2.5rem;
+}
+
+.info__description {
+  color: #7a7a7a;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+
+.info__progress {
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 1rem;
+}
+
+.info__progress-value {
+  display: block;
+  background-color: #3cb4ac;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+main {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+  width: 85%;
+  margin-bottom: 5rem;
+}
+
+main .about__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+main .about__text {
+  color: #7a7a7a;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+main .content__pledge {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+}
+
+main .content__pledge h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+main .content__pledge h3 span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #3cb4ac;
+}
+
+main .content__pledge p {
+  color: #7a7a7a;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+main .content__pledge h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+main .content__pledge h4 span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  color: #3cb4ac;
+}
+
+main .content__pledge button {
+  background-color: #3cb4ac;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 1rem 2rem;
 }
 
 body {
