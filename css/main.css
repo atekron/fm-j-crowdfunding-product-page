@@ -98,6 +98,149 @@
   fill: black;
 }
 
+.selection-modal header {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.selection-modal header p {
+  color: #7a7a7a;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 2rem 0;
+}
+
+.selection-modal article {
+  background-color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.15rem solid whitesmoke;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0;
+}
+
+.selection-modal article .choice {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.selection-modal article .choice label {
+  color: black;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.selection-modal article .choice label span {
+  display: block;
+  color: #3cb4ac;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.selection-modal article .choice input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.selection-modal article p {
+  color: #7a7a7a;
+  padding: 2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.selection-modal article .days-left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+}
+
+.selection-modal article .days-left span {
+  color: #3cb4ac;
+  font-weight: 500;
+}
+
+.selection-modal .pledge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 0.2rem solid whitesmoke;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.selection-modal .pledge span {
+  text-align: center;
+  margin: 2rem auto;
+  color: #3cb4ac;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.selection-modal .pledge div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.selection-modal .pledge div div {
+  position: relative;
+}
+
+.selection-modal .pledge div div input {
+  border-radius: 2rem;
+  border: 0.15rem solid lightgrey;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 8rem;
+  padding: 1rem;
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.selection-modal .pledge div div::before {
+  position: absolute;
+  top: 0.9rem;
+  left: 2rem;
+  content: "$";
+  color: #3cb4ac;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.selection-modal .pledge div button {
+  background-color: #3cb4ac;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 0.15rem solid #3cb4ac;
+  margin-left: 1rem;
+}
+
 .container {
   min-width: 420px;
 }

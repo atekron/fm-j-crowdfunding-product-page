@@ -37,6 +37,7 @@ const hamburgerClose = document.querySelector(".main-nav__hamburger-close");
 const hamburgerMenu = document.querySelector(".main-nav__hamburger-menu");
 const modalBg = document.querySelector(".container__modal-bg");
 const navLinks = document.querySelector(".main-nav__links");
+const modalSelection = document.querySelector(".selection-modal");
 
 //handling mobile menu
 hamburger.addEventListener("click", () => {
@@ -56,7 +57,10 @@ hamburger.addEventListener("click", () => {
 //closing modal
 document
   .querySelector(".selection-modal__close")
-  .addEventListener("click", () => {});
+  .addEventListener("click", () => {
+    modalSelection.style.display = "none";
+    modalBg.style.display = "none";
+  });
 
 //rendering page
 function templateContent(title, price, description, quantity) {
