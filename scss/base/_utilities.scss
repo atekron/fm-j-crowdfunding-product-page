@@ -1,4 +1,9 @@
-.disabled-element {
+.disabled-element-btn {
   opacity: 0.5;
   pointer-events: none;
+  background-color: $dark-grey !important;
+}
+
+.disabled-element {
+  opacity: 0.5;
 }

@@ -32,21 +32,31 @@ const data = {
 
 const content = document.querySelector(".content");
 const info = document.querySelector(".info__entries");
-
 const hamburger = document.querySelector(".main-nav__hamburger");
 const hamburgerClose = document.querySelector(".main-nav__hamburger-close");
 const hamburgerMenu = document.querySelector(".main-nav__hamburger-menu");
+const modalBg = document.querySelector(".container__modal-bg");
+const navLinks = document.querySelector(".main-nav__links");
 
 //handling mobile menu
 hamburger.addEventListener("click", () => {
   if (hamburgerMenu.style.display !== "none") {
     hamburgerClose.style.display = "inline-block";
     hamburgerMenu.style.display = "none";
+    modalBg.style.display = "block";
+    navLinks.style.display = "flex";
   } else {
     hamburgerClose.style.display = "none";
     hamburgerMenu.style.display = "inline-block";
+    modalBg.style.display = "none";
+    navLinks.style.display = "none";
   }
 });
+
+//closing modal
+document
+  .querySelector(".selection-modal__close")
+  .addEventListener("click", () => {});
 
 //rendering page
 function templateContent(title, price, description, quantity) {
@@ -59,7 +69,7 @@ function templateContent(title, price, description, quantity) {
   <p class="${disabledElement}">${description}</p>
   <div>
     <h4 class="${disabledElement}">${quantity} <span>left</span></h4>
-    <button class="${disabledElement}">${
+    <button class="${disabledElement}-btn">${
     !disabledElement ? "Select Reward" : "Out of Stock"
   }</button>
   </div>
@@ -103,3 +113,17 @@ let progress = document.createElement("div");
 progress.classList.add("info__progress");
 progress.innerHTML = templateProgress(data.goal, data.info[0].param);
 info.appendChild(progress);
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 960) {
+    hamburgerClose.style.display = "none";
+    hamburgerMenu.style.display = "inline-block";
+    modalBg.style.display = "none";
+    navLinks.style.display = "none";
+  } else {
+    hamburgerClose.style.display = "none";
+    hamburgerMenu.style.display = "none";
+    modalBg.style.display = "none";
+    navLinks.style.display = "inline";
+  }
+});

@@ -27,8 +27,11 @@
   </head>
   <body>
     <div class="container">
+      <div class="container__modal-bg"></div>
       <nav class="main-nav">
-        <a href=""><img src="/images/logo.svg" alt="logo" /></a>
+        <a class="main-nav__logo" href=""
+          ><img src="/images/logo.svg" alt="logo"
+        /></a>
         <span class="main-nav__links">
           <a href="">About</a>
           <a href="">Discover</a>
@@ -90,6 +93,14 @@
     <!-- Selection modal start -->
 
     <div class="selection-modal">
+      <div class="selection-modal__close">
+        <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
       <header>
         <h2>Back this project</h2>
         <p>
@@ -200,6 +211,9 @@
     </div>
 
     <div class="success-modal">
+      <div class="success-modal__check">
+        <img src="/images/icon-check.svg" alt="success icon" />
+      </div>
       <h3>Thanks for your support!</h3>
       <p>
         Your pledge brings us one step closer to sharing Mastercraft Bamboo

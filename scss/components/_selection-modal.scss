@@ -1,3 +1,21 @@
 .selection-modal {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  @include card;
+  width: 85%;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    fill: $moderate-cyan;
+    &:hover {
+      fill: black;
+    }
+  }
 }

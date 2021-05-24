@@ -1,3 +1,26 @@
 .success-modal {
+  @include card;
+  width: 30rem;
   display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  &__check {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    @include text;
+    padding: 0;
+    text-align: center;
+    margin: 2rem;
+  }
+  button {
+    @include btn;
+    padding: 1rem 2rem;
+  }
 }
