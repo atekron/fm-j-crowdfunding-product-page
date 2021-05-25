@@ -7,3 +7,14 @@
 .disabled-element {
   opacity: 0.5;
 }
+
+.bookmarked {
+  background-color: whitesmoke !important;
+  opacity: 1 !important;
+  @media screen and (min-width: 960px) {
+    &::after {
+      content: "Bookmarked" !important;
+      color: $dark-cyan;
+    }
+  }
+}

@@ -7,11 +7,20 @@
   max-width: 85%;
   text-align: center;
 
+  @media screen and (min-width: 960px) {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: -4rem;
+  }
+
   &__title {
     margin: 0 4rem;
     margin-top: 2rem;
     font-size: 1.5rem;
     font-weight: 700;
+    @media screen and (min-width: 960px) {
+      font-size: 2rem;
+    }
 
     &::before {
       content: "";
@@ -28,12 +37,19 @@
 
   &__text {
     @include text;
+    @media screen and (min-width: 960px) {
+      font-size: 1.2rem;
+    }
   }
 
   &__buttons {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    @media screen and (min-width: 960px) {
+      justify-content: space-between;
+      padding: 1rem;
+    }
 
     button {
       @include btn;
@@ -43,15 +59,34 @@
   &__back-project {
     width: 100%;
     max-width: 20rem;
+    @media screen and (min-width: 960px) {
+      min-width: 10rem;
+      width: 15rem;
+    }
   }
 
   &__bookmark {
     margin-left: 0.5rem;
     opacity: 0.5;
+    position: relative;
+    @media screen and (min-width: 960px) {
+      max-width: 15rem;
+      &::after {
+        content: "Bookmark";
+        font-size: 1rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5rem;
+      }
+    }
     img {
       width: auto;
       height: 100%;
       object-fit: cover;
+      @media screen and (min-width: 960px) {
+        margin-right: 20rem;
+      }
     }
   }
 }

@@ -2,6 +2,12 @@ main {
   @include card;
   width: 85%;
   margin-bottom: 5rem;
+
+  @media screen and (min-width: 960px) {
+    max-width: 960px;
+    margin: 3rem auto;
+    margin-bottom: 10rem;
+  }
   .about {
     &__title {
       font-size: 1.5rem;

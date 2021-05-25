@@ -1,6 +1,7 @@
 .success-modal {
   @include card;
   width: 30rem;
+  max-width: 85%;
   display: none;
   flex-direction: column;
   align-items: center;

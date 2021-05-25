@@ -43,6 +43,12 @@ const modalBg = document.querySelector(".container__modal-bg");
 const navLinks = document.querySelector(".main-nav__links");
 const modalSelection = document.querySelector(".selection-modal");
 const modalSuccess = document.querySelector(".success-modal");
+const bookmarkBtn = document.querySelector(".header__bookmark");
+
+function bookmark() {
+  bookmarkBtn.classList.toggle("bookmarked");
+  data.bookmarked = !data.bookmarked;
+}
 
 //handling mobile menu
 hamburger.addEventListener("click", () => {
@@ -75,6 +81,7 @@ function closeModal() {
 function contribute() {
   modalSelection.style.display = "none";
   modalSuccess.style.display = "flex";
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 
 //rendering page

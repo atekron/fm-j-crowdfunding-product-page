@@ -1,5 +1,14 @@
 .container {
   min-width: 420px;
+
+  @media screen and (min-width: 960px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url("/images/image-hero-desktop.jpg");
+    background-position: top left, top left;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 10%, 100% auto;
+  }
+
   &__modal-bg {
     content: "";
     display: none;

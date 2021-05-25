@@ -60,7 +60,7 @@
           <button class="header__back-project" onclick="showModal()">
             Back this project
           </button>
-          <button class="header__bookmark">
+          <button class="header__bookmark" onclick="bookmark()">
             <img src="/images/icon-bookmark.svg" alt="bookmark project" />
           </button>
         </div>
@@ -178,7 +178,12 @@
                 value="25"
               />
             </div>
-            <button class="option__submit">Continue</button>
+            <button
+              class="option__submit"
+              onclick="event.preventDefault(); contribute();"
+            >
+              Continue
+            </button>
           </div>
         </form>
       </div>
@@ -211,7 +216,12 @@
                 value="75"
               />
             </div>
-            <button class="option__submit">Continue</button>
+            <button
+              class="option__submit"
+              onclick="event.preventDefault(); contribute();"
+            >
+              Continue
+            </button>
           </div>
         </form>
       </div>
@@ -245,7 +255,12 @@
                 value="200"
               />
             </div>
-            <button class="option__submit">Continue</button>
+            <button
+              class="option__submit"
+              onclick="event.preventDefault(); contribute();"
+            >
+              Continue
+            </button>
           </div>
         </form>
       </div>

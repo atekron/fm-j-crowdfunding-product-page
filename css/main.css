@@ -16,6 +16,18 @@
   opacity: 0.5;
 }
 
+.bookmarked {
+  background-color: whitesmoke !important;
+  opacity: 1 !important;
+}
+
+@media screen and (min-width: 960px) {
+  .bookmarked::after {
+    content: "Bookmarked" !important;
+    color: #147b74;
+  }
+}
+
 .success-modal {
   background-color: white;
   margin: 2rem auto;
@@ -23,6 +35,7 @@
   border: 0.15rem solid whitesmoke;
   border-radius: 0.5rem;
   width: 30rem;
+  max-width: 85%;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -62,6 +75,10 @@
   font-weight: 700;
   cursor: pointer;
   padding: 1rem 2rem;
+}
+
+.success-modal button:hover {
+  background-color: #147b74;
 }
 
 .selection-modal {
@@ -241,8 +258,22 @@
   margin-left: 1rem;
 }
 
+.option__submit:hover {
+  background-color: #147b74;
+}
+
 .container {
   min-width: 420px;
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0))), url("/images/image-hero-desktop.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url("/images/image-hero-desktop.jpg");
+    background-position: top left, top left;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 10%, 100% auto;
+  }
 }
 
 .container__modal-bg {
@@ -266,6 +297,13 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
+}
+
+@media screen and (min-width: 960px) {
+  .main-nav {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .main-nav__logo {
@@ -331,6 +369,24 @@
   }
 }
 
+@media screen and (min-width: 960px) {
+  .main-nav__links {
+    margin-left: auto;
+  }
+  .main-nav__links a {
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-left: 2rem;
+    position: relative;
+    top: 0.4rem;
+  }
+  .main-nav__links a:hover {
+    text-decoration: underline;
+  }
+}
+
 .main-nav__hamburger-close {
   display: none;
 }
@@ -367,11 +423,25 @@
   text-align: center;
 }
 
+@media screen and (min-width: 960px) {
+  .header {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: -4rem;
+  }
+}
+
 .header__title {
   margin: 0 4rem;
   margin-top: 2rem;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+@media screen and (min-width: 960px) {
+  .header__title {
+    font-size: 2rem;
+  }
 }
 
 .header__title::before {
@@ -394,6 +464,12 @@
   font-weight: 500;
 }
 
+@media screen and (min-width: 960px) {
+  .header__text {
+    font-size: 1.2rem;
+  }
+}
+
 .header__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -402,6 +478,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 960px) {
+  .header__buttons {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+  }
 }
 
 .header__buttons button {
@@ -414,14 +499,41 @@
   cursor: pointer;
 }
 
+.header__buttons button:hover {
+  background-color: #147b74;
+}
+
 .header__back-project {
   width: 100%;
   max-width: 20rem;
 }
 
+@media screen and (min-width: 960px) {
+  .header__back-project {
+    min-width: 10rem;
+    width: 15rem;
+  }
+}
+
 .header__bookmark {
   margin-left: 0.5rem;
   opacity: 0.5;
+  position: relative;
+}
+
+@media screen and (min-width: 960px) {
+  .header__bookmark {
+    max-width: 15rem;
+  }
+  .header__bookmark::after {
+    content: "Bookmark";
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 5rem;
+  }
 }
 
 .header__bookmark img {
@@ -429,6 +541,12 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (min-width: 960px) {
+  .header__bookmark img {
+    margin-right: 20rem;
+  }
 }
 
 .info {
@@ -439,6 +557,14 @@
   border-radius: 0.5rem;
   max-width: 85%;
   text-align: center;
+}
+
+@media screen and (min-width: 960px) {
+  .info {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
 }
 
 .info__entries div:first-of-type h3::before {
@@ -479,6 +605,14 @@ main {
   border-radius: 0.5rem;
   width: 85%;
   margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 960px) {
+  main {
+    max-width: 960px;
+    margin: 3rem auto;
+    margin-bottom: 10rem;
+  }
 }
 
 main .about__title {
@@ -552,6 +686,10 @@ main .content__pledge button {
   font-weight: 700;
   cursor: pointer;
   padding: 1rem 2rem;
+}
+
+main .content__pledge button:hover {
+  background-color: #147b74;
 }
 
 body {
