@@ -1,4 +1,5 @@
 const data = {
+  bookmarked: false,
   goal: 100000,
   info: [
     { param: 89914, description: "of $100,000 backed" },
@@ -7,6 +8,7 @@ const data = {
   ],
   pledges: [
     {
+      id: "tier-1",
       title: "Bamboo Stand",
       price: "25",
       description:
@@ -14,6 +16,7 @@ const data = {
       quantity: 101,
     },
     {
+      id: "tier-2",
       title: "Black Edition Stand",
       price: "75",
       description:
@@ -21,6 +24,7 @@ const data = {
       quantity: 64,
     },
     {
+      id: "tier-3",
       title: "Mahogany Special Edition",
       price: "200",
       description:
@@ -38,6 +42,7 @@ const hamburgerMenu = document.querySelector(".main-nav__hamburger-menu");
 const modalBg = document.querySelector(".container__modal-bg");
 const navLinks = document.querySelector(".main-nav__links");
 const modalSelection = document.querySelector(".selection-modal");
+const modalSuccess = document.querySelector(".success-modal");
 
 //handling mobile menu
 hamburger.addEventListener("click", () => {
@@ -54,13 +59,23 @@ hamburger.addEventListener("click", () => {
   }
 });
 
-//closing modal
-document
-  .querySelector(".selection-modal__close")
-  .addEventListener("click", () => {
-    modalSelection.style.display = "none";
-    modalBg.style.display = "none";
-  });
+//open and close modal
+function showModal() {
+  modalSelection.style.display = "flex";
+  modalBg.style.display = "block";
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+}
+
+function closeModal() {
+  modalSelection.style.display = "none";
+  modalBg.style.display = "none";
+  modalSuccess.style.display = "none";
+}
+
+function contribute() {
+  modalSelection.style.display = "none";
+  modalSuccess.style.display = "flex";
+}
 
 //rendering page
 function templateContent(title, price, description, quantity) {
@@ -73,7 +88,7 @@ function templateContent(title, price, description, quantity) {
   <p class="${disabledElement}">${description}</p>
   <div>
     <h4 class="${disabledElement}">${quantity} <span>left</span></h4>
-    <button class="${disabledElement}-btn">${
+    <button  onclick="showModal()" class="${disabledElement}-btn">${
     !disabledElement ? "Select Reward" : "Out of Stock"
   }</button>
   </div>

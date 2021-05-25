@@ -32,7 +32,7 @@
   &__description {
     @include text;
     padding: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__in-stock {
@@ -60,6 +60,7 @@
       color: $moderate-cyan;
       font-size: 1rem;
       font-weight: 500;
+      margin-bottom: 2rem;
     }
   }
 

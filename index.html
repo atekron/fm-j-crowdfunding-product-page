@@ -57,7 +57,9 @@
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
         <div class="header__buttons">
-          <button class="header__back-project">Back this project</button>
+          <button class="header__back-project" onclick="showModal()">
+            Back this project
+          </button>
           <button class="header__bookmark">
             <img src="/images/icon-bookmark.svg" alt="bookmark project" />
           </button>
@@ -93,7 +95,7 @@
     <!-- Selection modal start -->
 
     <div class="selection-modal">
-      <div class="selection-modal__close">
+      <div class="selection-modal__close" onclick="closeModal()">
         <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
@@ -124,7 +126,7 @@
           project. As a backer, you will be signed up to receive product updates
           via email.
         </p>
-        <div class="option__pledge">
+        <form class="option__pledge">
           <p>Enter your pledge</p>
           <div class="option__sum">
             <div class="option__pledge-sum-wrapper">
@@ -137,9 +139,14 @@
                 value="0"
               />
             </div>
-            <button class="option__submit">Continue</button>
+            <button
+              class="option__submit"
+              onclick="event.preventDefault(); contribute();"
+            >
+              Continue
+            </button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="option">
@@ -158,7 +165,7 @@
           Backer member list.
         </p>
         <p class="option__in-stock">101 <span>left</span></p>
-        <div class="option__pledge">
+        <form class="option__pledge">
           <p>Enter your pledge</p>
           <div class="option__sum">
             <div class="option__pledge-sum-wrapper">
@@ -173,7 +180,7 @@
             </div>
             <button class="option__submit">Continue</button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="option">
@@ -191,7 +198,7 @@
           you. You’ll be added to our Backer member list. Shipping is included.
         </p>
         <p class="option__in-stock">64 <span>left</span></p>
-        <div class="option__pledge">
+        <form class="option__pledge">
           <p>Enter your pledge</p>
           <div class="option__sum">
             <div class="option__pledge-sum-wrapper">
@@ -206,7 +213,7 @@
             </div>
             <button class="option__submit">Continue</button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="option">
@@ -225,7 +232,7 @@
           Shipping is included.
         </p>
         <p class="option__in-stock">0 <span>left</span></p>
-        <div class="option__pledge">
+        <form class="option__pledge">
           <p>Enter your pledge</p>
           <div class="option__sum">
             <div class="option__pledge-sum-wrapper">
@@ -240,8 +247,9 @@
             </div>
             <button class="option__submit">Continue</button>
           </div>
-        </div>
+        </form>
       </div>
+    </div>
 
     <div class="success-modal">
       <div class="success-modal__check">
@@ -253,7 +261,7 @@
         Monitor Riser worldwide. You will get an email once our campaign is
         completed.
       </p>
-      <button>Got it!</button>
+      <button onclick="closeModal()">Got it!</button>
     </div>
     <script src="/js/main.js"></script>
   </body>

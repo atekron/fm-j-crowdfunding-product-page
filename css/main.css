@@ -36,7 +36,7 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  z-index: 10;
+  z-index: 20;
 }
 
 .success-modal__check {
@@ -65,9 +65,7 @@
 }
 
 .selection-modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -156,7 +154,7 @@
   line-height: 1.6;
   font-weight: 500;
   padding: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .option__in-stock {
@@ -190,6 +188,7 @@
   color: #3cb4ac;
   font-size: 1rem;
   font-weight: 500;
+  margin-bottom: 2rem;
 }
 
 .option__sum {
@@ -248,7 +247,7 @@
 
 .container__modal-bg {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
