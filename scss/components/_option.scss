@@ -1,0 +1,101 @@
+.option {
+  @include card;
+  margin: 1rem;
+  padding: 0;
+
+  &__radio-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    &:checked ~ .option__pledge {
+      display: flex;
+    }
+  }
+
+  &__label {
+    position: relative;
+    bottom: 1.25rem;
+    color: black;
+    font-weight: 700;
+    margin-left: 1rem;
+
+    span {
+      display: block;
+      color: $moderate-cyan;
+      font-weight: 500;
+      margin-top: 0.3rem;
+      margin-left: 3.8rem;
+    }
+  }
+
+  &__description {
+    @include text;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__in-stock {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    span {
+      color: $moderate-cyan;
+      font-weight: 500;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__pledge {
+    display: none;
+    flex-direction: column;
+    border-top: 0.2rem solid whitesmoke;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    p {
+      text-align: center;
+      margin: 0.5rem auto;
+      color: $moderate-cyan;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  &__sum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__pledge-sum-wrapper {
+    position: relative;
+    input {
+      border-radius: 2rem;
+      border: 0.15rem solid lightgrey;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 8rem;
+      padding: 1rem;
+      padding-left: 2rem;
+      text-align: center;
+    }
+    &::before {
+      position: absolute;
+      top: 0.9rem;
+      left: 2rem;
+      content: "$";
+      color: $moderate-cyan;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+  }
+
+  &__submit {
+    @include btn;
+    padding: 1rem 2rem;
+    border: 0.15rem solid $moderate-cyan;
+    margin-left: 1rem;
+  }
+}
