@@ -88,9 +88,12 @@ function templateContent(title, price, description, quantity) {
   <p class="${disabledElement}">${description}</p>
   <div>
     <h4 class="${disabledElement}">${quantity} <span>left</span></h4>
-    <button  onclick="showModal()" class="${disabledElement}-btn">${
-    !disabledElement ? "Select Reward" : "Out of Stock"
-  }</button>
+    <button
+      onclick="showModal()"
+      class="${disabledElement}-btn"
+    >
+      ${!disabledElement ? "Select Reward" : "Out of Stock"}
+    </button>
   </div>
   `;
 }
