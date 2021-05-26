@@ -3,7 +3,7 @@
   max-width: 85%;
   text-align: center;
   @media screen and (min-width: 960px) {
-    max-width: 960px;
+    max-width: $maxWidth;
     margin: 0 auto;
     margin-top: 3rem;
   }
@@ -30,16 +30,10 @@
   }
 
   &__parameter {
-    @media screen and (min-width: 960px) {
-      margin-left: 2rem;
-    }
     font-size: 2.5rem;
   }
 
   &__description {
-    @media screen and (min-width: 960px) {
-      margin-left: 2rem;
-    }
     @include text;
     padding-top: 0.5rem;
   }

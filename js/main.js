@@ -2,9 +2,9 @@ const data = {
   bookmarked: false,
   goal: 100000,
   info: [
-    { param: 89914, description: "of $100,000 backed" },
-    { param: 5007, description: "total backers" },
-    { param: 56, description: "days left" },
+    { param: 89914, description: "of $100,000 backed", id: "backed" },
+    { param: 5007, description: "total backers", id: "backers" },
+    { param: 56, description: "days left", id: "days-left" },
   ],
   pledges: [
     {
@@ -69,7 +69,6 @@ hamburger.addEventListener("click", () => {
 function showModal(id) {
   modalSelection.style.display = "flex";
   modalBg.style.display = "block";
-  console.log(id);
   document.getElementById(id).checked = true;
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
@@ -80,7 +79,31 @@ function closeModal() {
   modalSuccess.style.display = "none";
 }
 
-function contribute() {
+function contribute(formObject) {
+  data.info[0].param += parseInt(formObject["sum"].value);
+  data.info[1].param++;
+
+  document.querySelector(".param-backed").innerText =
+    data.info[0].param.toLocaleString();
+  document.querySelector(".param-backers").innerText =
+    data.info[1].param.toLocaleString();
+
+  //updating progress bar
+  let progressBarWidth = (data.info[0].param / data.goal) * 100 + "%";
+  document.querySelector(".info__progress-value").style.width =
+    progressBarWidth;
+
+  if (formObject["sum"].ariaLabel !== "no-reward") {
+    let pledge = data.pledges.find((x) => x.id === formObject["sum"].ariaLabel);
+    pledge.quantity--;
+    document.querySelector(
+      ".in-stock-" + formObject["sum"].ariaLabel
+    ).innerText = pledge.quantity;
+    document.querySelector(
+      ".in-stock-modal-" + formObject["sum"].ariaLabel
+    ).innerHTML = pledge.quantity + " <span>left</span>";
+  }
+
   modalSelection.style.display = "none";
   modalSuccess.style.display = "flex";
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -96,7 +119,7 @@ function templateContent(title, price, description, quantity, id) {
   </h3>
   <p class="${disabledElement}">${description}</p>
   <div>
-    <h4 class="${disabledElement}">${quantity} <span>left</span></h4>
+    <h4 class="${disabledElement} in-stock-${id}">${quantity} <span>left</span></h4>
     <button
       onclick="showModal('${id}')"
       class="${disabledElement}-btn"
@@ -107,9 +130,9 @@ function templateContent(title, price, description, quantity, id) {
   `;
 }
 
-function templateInfo(param, description) {
+function templateInfo(param, description, id) {
   return `
-  <h3 class="info__parameter">${param}</h3>
+  <h3 class="info__parameter param-${id}">${param}</h3>
   <p class="info__description">${description}</p>
   `;
 }
@@ -137,7 +160,11 @@ data.pledges.forEach((entry) => {
 
 data.info.forEach((entry) => {
   let div = document.createElement("div");
-  div.innerHTML = templateInfo(entry.param.toLocaleString(), entry.description);
+  div.innerHTML = templateInfo(
+    entry.param.toLocaleString(),
+    entry.description,
+    entry.id
+  );
   info.appendChild(div);
 });
 
