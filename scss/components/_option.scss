@@ -2,6 +2,9 @@
   @include card;
   margin: 1rem;
   padding: 0;
+  @media screen and (min-width: 960px) {
+    position: relative;
+  }
 
   &__radio-btn {
     width: 1.5rem;
@@ -21,6 +24,10 @@
     margin-left: 1rem;
 
     span {
+      @media screen and (min-width: 960px) {
+        display: inline-block;
+        margin-left: 1rem;
+      }
       display: block;
       color: $moderate-cyan;
       font-weight: 500;
@@ -36,6 +43,11 @@
   }
 
   &__in-stock {
+    @media screen and (min-width: 960px) {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
     font-size: 1.5rem;
     font-weight: 700;
     color: black;
@@ -54,7 +66,15 @@
     border-top: 0.2rem solid whitesmoke;
     padding: 1rem;
     margin-bottom: 1rem;
+    @media screen and (min-width: 960px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
     p {
+      @media screen and (min-width: 960px) {
+        margin: 0;
+      }
       text-align: center;
       margin: 0.5rem auto;
       color: $moderate-cyan;

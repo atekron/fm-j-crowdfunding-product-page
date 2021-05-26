@@ -66,9 +66,11 @@ hamburger.addEventListener("click", () => {
 });
 
 //open and close modal
-function showModal() {
+function showModal(id) {
   modalSelection.style.display = "flex";
   modalBg.style.display = "block";
+  console.log(id);
+  document.getElementById(id).checked = true;
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 
@@ -85,7 +87,7 @@ function contribute() {
 }
 
 //rendering page
-function templateContent(title, price, description, quantity) {
+function templateContent(title, price, description, quantity, id) {
   let disabledElement = quantity === 0 ? "disabled-element" : "";
   return `
   <h3 class="${disabledElement}">
@@ -96,7 +98,7 @@ function templateContent(title, price, description, quantity) {
   <div>
     <h4 class="${disabledElement}">${quantity} <span>left</span></h4>
     <button
-      onclick="showModal()"
+      onclick="showModal('${id}')"
       class="${disabledElement}-btn"
     >
       ${!disabledElement ? "Select Reward" : "Out of Stock"}
@@ -127,7 +129,8 @@ data.pledges.forEach((entry) => {
     entry.title,
     entry.price,
     entry.description,
-    entry.quantity
+    entry.quantity,
+    entry.id
   );
   content.appendChild(article);
 });
@@ -149,10 +152,14 @@ window.addEventListener("resize", () => {
     hamburgerMenu.style.display = "inline-block";
     modalBg.style.display = "none";
     navLinks.style.display = "none";
+    modalSelection.style.display = "none";
+    modalSuccess.style.display = "none";
   } else {
     hamburgerClose.style.display = "none";
     hamburgerMenu.style.display = "none";
     modalBg.style.display = "none";
     navLinks.style.display = "inline";
+    modalSelection.style.display = "none";
+    modalSuccess.style.display = "none";
   }
 });

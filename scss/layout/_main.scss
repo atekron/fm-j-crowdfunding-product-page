@@ -24,6 +24,12 @@ main {
     &__pledge {
       @include card;
       h3 {
+        @media screen and (min-width: 960px) {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
         font-size: 1rem;
         margin-bottom: 0.5rem;
         span {
@@ -31,6 +37,11 @@ main {
           margin-top: 0.5rem;
           font-weight: 500;
           color: $moderate-cyan;
+          @media screen and (min-width: 960px) {
+            margin-top: 0;
+            font-size: 1rem;
+            padding-right: 1rem;
+          }
         }
       }
 
@@ -38,6 +49,15 @@ main {
         @include text;
         padding: 0;
         margin-bottom: 1rem;
+      }
+
+      div {
+        @media screen and (min-width: 960px) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: 1rem;
+        }
       }
 
       h4 {
